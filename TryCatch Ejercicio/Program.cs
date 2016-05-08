@@ -5,6 +5,7 @@ using System.Text;
 
 namespace ConsoleApplication1
 {
+    //Mientras no marque error no se sale
     class Program
     {
         static void Main(string[] args)
