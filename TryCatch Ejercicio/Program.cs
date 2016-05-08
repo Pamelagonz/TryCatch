@@ -9,35 +9,32 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            int edad=0;
-            Console.WriteLine("Introduzca su edad:");
-            
-                edad = CapturaEdad(edad);
-            
-            
+            int edad = CapturaEdad();
+            //Console.WriteLine("Introduzca su edad:");
 
             Console.WriteLine("Su edad es:{0}", edad);
             Console.ReadKey();
         }
 
-        private static int CapturaEdad(int edad)
+        private static int CapturaEdad()
         {
+            Console.WriteLine("Su edad es:");
             try
             {
-                edad = Int16.Parse(Console.ReadLine());
-                return edad;
+                return Int16.Parse(Console.ReadLine());
+                
             }
             catch (OverflowException e)
             {
-                Console.WriteLine("ERROR:Eres una antiguedad.", Int16.MaxValue);
-                return CapturaEdad(edad);
+                Console.WriteLine("ERROR:Eres una antiguedad.");
+                return CapturaEdad();
             }
 
 
             catch (FormatException)
             {
                 Console.WriteLine("El formato no es valido.");
-                return CapturaEdad(edad);
+                return CapturaEdad();
             }
         }
     }
